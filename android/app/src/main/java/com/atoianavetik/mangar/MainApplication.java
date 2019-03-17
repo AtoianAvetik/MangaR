@@ -1,4 +1,4 @@
-package com.daviddang91.reactnativestarter;
+package com.atoianavetik.mangar;
 
 import android.app.Application;
 
