@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import { View } from "native-base";
+import {View} from "native-base";
 import styles from "./styles";
 
 import BasicModal from "./basicModal";
@@ -11,17 +11,17 @@ import ScrollModal from "./scrollModal";
 
 class ListModal extends Component {
 
-  render() {
-    return (
-      <View style={styles.container}>
-        <BasicModal />
-        <TopModal />
-        <CenterModal />
-        <BottomModal />
-        <ScrollModal />
-      </View>
-    );
-  }
+    render() {
+        return (
+            <View style={styles.container}>
+                <BasicModal/>
+                <TopModal/>
+                <CenterModal/>
+                <BottomModal/>
+                <ScrollModal/>
+            </View>
+        );
+    }
 }
 
 export default ListModal;
