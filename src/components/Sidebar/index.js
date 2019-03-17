@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import {Image, TouchableOpacity} from "react-native";
-import {Content, Text, List, ListItem, Container, View, Icon} from "native-base";
+import {Content, Text, List, ListItem, Container, View, Icon, Separator} from "native-base";
 import _ from "lodash";
 import styles from "./styles";
 
@@ -22,8 +22,12 @@ class SideBar extends Component {
                             if (data.route === "Logout") {
                                 return null;
                             } else {
-                                return <ListItem style={styles.menuItem} onPress={() => this.props.onPress(data)}>
+                                return <ListItem
+                                        noBorder
+                                        style={styles.menuItem}
+                                        onPress={() => this.props.onPress(data)}>
                                     <Icon
+                                        type="Feather"
                                         active
                                         name={data.icon}
                                         style={{color: "#777", fontSize: 26, width: 30}}
@@ -37,6 +41,7 @@ class SideBar extends Component {
                 <TouchableOpacity style={styles.footer} onPress={() => this.props.onPress(logoutMenu)}>
                     <Icon
                         active
+                        type="Feather"
                         name={logoutMenu.icon}
                         style={{color: "#777", fontSize: 26, width: 30}}
                     />

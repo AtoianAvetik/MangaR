@@ -1,16 +1,18 @@
 import React from "react";
 import {createDrawerNavigator} from "react-navigation";
+import Library from "./LibraryNavigator";
 import SideBar from "../containers/SlidebarContainer";
-import Home from "../containers/HomeContainer";
 import Modal from "../containers/ModalContainer";
+import Settings from "../containers/SettingsContainer";
 
 export default createDrawerNavigator(
     {
-        Home: {screen: Home},
+        Library: {screen: Library},
         Modal: {screen: Modal},
+        Settings: {screen: Settings},
     },
     {
-        initialRouteName: "Home",
+        initialRouteName: "Library",
         contentComponent: props => <SideBar {...props} />
     }
 );

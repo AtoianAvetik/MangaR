@@ -8,14 +8,19 @@ class SidebarContainer extends Component {
         super(props);
         this.data = [
             {
-                name: "Home",
-                route: "Home",
-                icon: "home"
+                name: "Library",
+                route: "Library",
+                icon: "book"
             },
             {
                 name: "Modal",
                 route: "Modal",
-                icon: "albums"
+                icon: "home"
+            },
+            {
+                name: "Settings",
+                route: "Settings",
+                icon: "settings"
             },
             {
                 name: "Logout",

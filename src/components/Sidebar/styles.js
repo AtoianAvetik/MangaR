@@ -1,11 +1,11 @@
 export default {
     container: {
         flex: 1,
-        backgroundColor: "#F2F2F2",
+        backgroundColor: "#ffffff",
     },
     drawerCover: {
-        backgroundColor: "#fff",
-        height: 104,
+        backgroundColor: "#5d0081",
+        height: 154,
         flexDirection: "row",
         alignItems: "center",
     },
@@ -14,7 +14,6 @@ export default {
         height: 56,
         borderRadius: 28,
         borderWidth: 1,
-        borderColor: "#64C8D0",
         marginLeft: 16
     },
     organizerName: {
@@ -22,10 +21,11 @@ export default {
         fontSize: 17,
         fontWeight: "bold",
         marginRight: 16,
-        flex: 1
+        flex: 1,
+        color: "#ffffff"
     },
     menuItem: {
-        height: 70
+        height: 60
     },
     menuText: {
         marginLeft: 16,
