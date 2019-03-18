@@ -1,5 +1,5 @@
 import React from "react";
-import {createDrawerNavigator} from "react-navigation";
+import { createDrawerNavigator, DrawerActions } from "react-navigation";
 import Library from "./LibraryNavigator";
 import SideBar from "../containers/SlidebarContainer";
 import Modal from "../containers/ModalContainer";
@@ -12,6 +12,11 @@ export default createDrawerNavigator(
         Settings: {screen: Settings},
     },
     {
+        getCustomActionCreators: (route, stateKey) => {
+            return {
+                toggleMainDrawer: () => DrawerActions.toggleDrawer({ key: stateKey })
+            };
+        },
         initialRouteName: "Library",
         contentComponent: props => <SideBar {...props} />
     }

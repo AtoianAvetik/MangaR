@@ -1,5 +1,5 @@
-import React, {Component} from "react";
-import {Container, Content, List, ListItem, Text} from "native-base";
+import React, { Component } from "react";
+import { Container, Content, List, ListItem, Text } from "native-base";
 import styles from "./styles";
 
 export default class LibraryContainer extends Component {
@@ -9,7 +9,11 @@ export default class LibraryContainer extends Component {
                 <Content bounces={false}>
                     <List>
                         <ListItem
-                            onPress={() => this.props.navigation.navigate("LibraryItem", { id: "item1", name: "Brent", backButton: true })}
+                            onPress={() => this.props.navigation.navigate("LibraryItem", {
+                                id: "item1",
+                                name: "Brent",
+                                backButton: true
+                            })}
                             noBorder>
                             <Text>Library Item</Text>
                         </ListItem>

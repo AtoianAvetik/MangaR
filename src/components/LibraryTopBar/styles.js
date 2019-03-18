@@ -1,8 +1,9 @@
+import { getStatusBarHeight } from "react-native-status-bar-height";
+
 export default {
-    container: {
-        flex: 1,
-        alignItems: "stretch",
-        backgroundColor: "#fff"
+    headerContainer: {
+        paddingTop: getStatusBarHeight(),
+        height: 56 + getStatusBarHeight()
     },
     headerLeft: {
         flex: 0.3,
@@ -21,6 +22,6 @@ export default {
     leftButton: {
         position: "absolute",
         left: 0,
-        top: 10
+        top: 8
     }
 };
