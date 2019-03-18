@@ -3,8 +3,10 @@ import { createDrawerNavigator, createStackNavigator, DrawerActions } from "reac
 import LibraryTopBar from "../components/LibraryTopBar";
 import Library from "../containers/LibraryContainer";
 import LibraryItem from "../containers/LibraryItemContainer";
+import Viewer from "../containers/ViewerContainer";
+import TransitionConfiguration from "../navigation/transitions";
 
-const DrawerRight = createDrawerNavigator(
+const LibraryDrawer = createDrawerNavigator(
     {
         Library: {
             screen: Library
@@ -19,20 +21,37 @@ const DrawerRight = createDrawerNavigator(
     }
 );
 
-export default createStackNavigator(
+const LibraryStack = createStackNavigator(
     {
         Library: {
-            screen: DrawerRight
+            screen: LibraryDrawer
         },
         LibraryItem: {
             screen: LibraryItem
-        }
+        },
     },
     {
         headerMode: "float",
         mode: "card ",
+        transitionConfig: TransitionConfiguration,
         navigationOptions: ({ navigation }) => ({
             header: <LibraryTopBar navigation={navigation}/>
-        })
+        }),
+    }
+);
+
+export default createStackNavigator(
+    {
+        LibraryStack: {
+            screen: LibraryStack
+        },
+        Viewer: {
+            screen: Viewer,
+        }
+    },
+    {
+        headerMode: "none",
+        mode: "card ",
+        transitionConfig: TransitionConfiguration
     }
 );

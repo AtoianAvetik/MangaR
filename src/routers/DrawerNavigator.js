@@ -9,7 +9,7 @@ export default createDrawerNavigator(
     {
         Library: {screen: Library},
         Modal: {screen: Modal},
-        Settings: {screen: Settings},
+        Settings: {screen: Settings}
     },
     {
         getCustomActionCreators: (route, stateKey) => {
