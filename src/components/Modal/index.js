@@ -11,6 +11,7 @@ export default class ModalBox extends Component {
     render() {
         return (
             <Container style={styles.container}>
+                <StatusBar translucent={false}/>
                 <Header
                     noShadow
                     iosBarStyle={"dark-content"}
