@@ -23,5 +23,15 @@ export default {
         position: "absolute",
         left: 0,
         top: 8
+    },
+    iconButton: {
+        height: 45,
+        width: 45,
+        paddingLeft: 0,
+        paddingRight: 0,
+        paddingTop: 0,
+        paddingBottom: 0,
+        alignItems: "center",
+        justifyContent: "center"
     }
 };

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Animated, Easing, Platform, View } from "react-native";
+import { Animated, Easing, View } from "react-native";
 import { Body, Button, Header, Icon, Left, Right, Title } from "native-base";
+import Menu, { MenuDivider, MenuItem } from "react-native-material-menu";
 
 import styles from "./styles";
 
@@ -58,6 +59,20 @@ class FadeRotateView extends Component {
 }
 
 export default class LibraryTopBar extends Component {
+    _menu = null;
+
+    setMenuRef = ref => {
+        this._menu = ref;
+    };
+
+    hideMenu = () => {
+        this._menu.hide();
+    };
+
+    showMenu = () => {
+        this._menu.show();
+    };
+
     constructor(props) {
         super(props);
     }
@@ -78,13 +93,13 @@ export default class LibraryTopBar extends Component {
                     <Left style={styles.headerLeft}>
                         <FadeRotateView style={styles.leftButton} rotateOutputRange={["-180deg", "0deg"]}
                                         visible={showBackButton}>
-                            <Button transparent onPress={() => this.props.navigation.pop()}>
+                            <Button transparent rounded androidRippleColor style={styles.iconButton} onPress={() => this.props.navigation.pop()}>
                                 <Icon type="Feather" name="arrow-left" style={{ color: "#000" }}/>
                             </Button>
                         </FadeRotateView>
                         <FadeRotateView style={styles.leftButton} rotateOutputRange={["0deg", "-180deg"]}
                                         visible={!showBackButton}>
-                            <Button transparent onPress={() => this.props.navigation.toggleMainDrawer()}>
+                            <Button transparent rounded androidRippleColor style={styles.iconButton} onPress={() => this.props.navigation.toggleMainDrawer()}>
                                 <Icon type="Feather" name="menu" style={{ color: "#000" }}/>
                             </Button>
                         </FadeRotateView>
@@ -93,12 +108,26 @@ export default class LibraryTopBar extends Component {
                     <Title style={styles.textBody}>{name}</Title>
                     </Body>
                     <Right style={styles.headerRight}>
-                        <Button transparent onPress={() => this.props.navigation.toggleFilterDrawer()}>
-                            <Icon type="Feather" name="filter" style={{ fontSize: 20,color: "#000" }}/>
+                        <Button transparent rounded androidRippleColor style={styles.iconButton} onPress={() => this.props.navigation.toggleFilterDrawer()}>
+                            <Icon type="Feather" name="filter" style={{ fontSize: 20, color: "#000" }}/>
                         </Button>
-                        <Button transparent>
-                            <Icon type="Ionicons" name="more" style={{ fontSize: 24,color: "#000" }}/>
-                        </Button>
+                        <Menu
+                            style={{ top: 40 }}
+                            ref={this.setMenuRef}
+                            button={
+                                <Button transparent rounded androidRippleColor style={styles.iconButton} onPress={this.showMenu}>
+                                    <Icon type="Ionicons" name="more" style={{ fontSize: 24,color: "#000" }}/>
+                                </Button>
+                            }
+                        >
+                            <MenuItem onPress={this.hideMenu}>Menu item 1</MenuItem>
+                            <MenuItem onPress={this.hideMenu}>Menu item 2</MenuItem>
+                            <MenuItem onPress={this.hideMenu} disabled>
+                                Menu item 3
+                            </MenuItem>
+                            <MenuDivider/>
+                            <MenuItem onPress={this.hideMenu}>Menu item 4</MenuItem>
+                        </Menu>
                     </Right>
                 </Header>
             </View>
