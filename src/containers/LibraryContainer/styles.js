@@ -14,5 +14,10 @@ export default {
         leftElement: {color: "#000"},
         titleText: {color: "#000"},
         rightElement: {color: "#000"},
+    },
+    popupMenu: {
+        popupMenuActionsShift: {
+            left: 20
+        }
     }
 };

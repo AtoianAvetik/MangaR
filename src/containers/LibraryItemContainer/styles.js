@@ -2,7 +2,7 @@ import { getStatusBarHeight } from "react-native-status-bar-height";
 
 export default {
     container: {
-        flex: 1,
+        flex: 0.8,
         backgroundColor: "#fff"
     },
     toolbar: {
@@ -14,7 +14,7 @@ export default {
         },
         leftElement: {color: "#fff"},
         titleText: {color: "#fff"},
-        rightElement: {color: "#fff"},
+        rightElement: {color: "#fff"}
     },
     content: {
         zIndex: 0,

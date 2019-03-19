@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Image, StatusBar} from "react-native";
 import {Button, Container, Content, Text} from "native-base";
-import {Toolbar, IconToggle} from "react-native-material-ui";
+import {Toolbar} from "react-native-material-ui";
 import LinearGradient from "react-native-linear-gradient";
 import styles from "./styles";
 

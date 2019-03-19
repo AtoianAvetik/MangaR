@@ -9,6 +9,7 @@ import {
 } from "native-base";
 import {Toolbar, IconToggle} from "react-native-material-ui";
 import styles from "./styles";
+import PopupMenu from "../../components/MorePopupMenu";
 
 export default class LibraryContainer extends Component {
     constructor(props) {
@@ -57,7 +58,37 @@ export default class LibraryContainer extends Component {
                                 backButton: true
                             })}
                             noBorder>
-                            <Text>Library Item</Text>
+                            <Text>Library Item Library Item PropTypes</Text>
+                            <PopupMenu
+                                actions={["item 1", "item 2"]}
+                                style={styles.popupMenu}
+                                onPress={(label) => console.log(label)}/>
+                        </ListItem>
+                        <ListItem
+                            onPress={() => this.props.navigation.navigate("LibraryItem", {
+                                id: "item1",
+                                name: "Brent",
+                                backButton: true
+                            })}
+                            noBorder>
+                            <Text>Library Item Library Item</Text>
+                            <PopupMenu
+                                actions={["item 1", "item 2"]}
+                                style={styles.popupMenu}
+                                onPress={(label) => console.log(label)}/>
+                        </ListItem>
+                        <ListItem
+                            onPress={() => this.props.navigation.navigate("LibraryItem", {
+                                id: "item1",
+                                name: "Brent",
+                                backButton: true
+                            })}
+                            noBorder>
+                            <Text>Library Item </Text>
+                            <PopupMenu
+                                actions={["item 1", "item 2"]}
+                                style={styles.popupMenu}
+                                onPress={(label) => console.log(label)}/>
                         </ListItem>
                     </List>
                 </Content>
