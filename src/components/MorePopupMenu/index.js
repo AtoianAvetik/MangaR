@@ -23,6 +23,7 @@ const propTypes = {
     /**
      * Name of Icon and Icon set that should be use. From react-native-vector-icons
      */
+    iconColor: PropTypes.string,
     iconName: PropTypes.string,
     iconSet: PropTypes.string,
 };
@@ -36,6 +37,7 @@ const defaultProps = {
 };
 
 function getStyles(props) {
+    const popupMenuIconStyles = {color: props.iconColor};
 
     return {
         popupMenuContainer: [
@@ -43,6 +45,7 @@ function getStyles(props) {
         ],
         popupMenuIcon: [
             props.style.popupMenuIcon,
+            popupMenuIconStyles,
         ],
         popupMenuActionsShift: [
             props.style.popupMenuActionsShift,
