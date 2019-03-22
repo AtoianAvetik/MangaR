@@ -30,7 +30,10 @@
         "clear": "rimraf /tmp/haste-map-react-native-packager-* & rimraf /tmp/metro-bundler-cache-*",
         "android": "react-native run-android",
         "ios": "react-native run-ios",
-        "test": "node node_modules/jest/bin/jest.js --watch"
+        "test": "node node_modules/jest/bin/jest.js --watch",
+        "build:android:release": "cd android & ./gradlew assembleRelease",
+        "install:android": "adb install -r android/app/build/outputs/apk/debug/app-debug.apk",
+        "install:android:release": "adb install -r android/app/build/outputs/apk/release/app-release.apk"
     },
     "jest": {
         "preset": "react-native"

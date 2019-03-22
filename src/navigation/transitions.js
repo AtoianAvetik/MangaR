@@ -7,7 +7,7 @@ let rightSlide = (sceneProps) => {
 
     const translateX = position.interpolate({
         inputRange: [index - 1, index, index + 1],
-        outputRange: [layout.initWidth, 0, 0]
+        outputRange: [layout.initWidth, 0, -(layout.initWidth * 0.1)]
     });
 
     // const opacity = position.interpolate({

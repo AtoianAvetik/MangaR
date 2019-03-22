@@ -4,7 +4,7 @@ export default {
         backgroundColor: "#ffffff",
     },
     drawerCover: {
-        backgroundColor: "#5d0081",
+        backgroundColor: "#f7f7f7",
         height: 154,
         flexDirection: "row",
         alignItems: "center",
@@ -22,14 +22,15 @@ export default {
         fontWeight: "bold",
         marginRight: 16,
         flex: 1,
-        color: "#ffffff"
+        color: "#444444"
     },
     menuItem: {
         height: 60
     },
     menuText: {
         marginLeft: 16,
-        fontSize: 17
+        fontSize: 17,
+        color: "#444444"
     },
     footer: {
         marginLeft: 16,

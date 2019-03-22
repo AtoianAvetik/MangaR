@@ -44,8 +44,8 @@ function getStyles(props) {
             props.style.popupMenuContainer,
         ],
         popupMenuIcon: [
-            props.style.popupMenuIcon,
             popupMenuIconStyles,
+            props.style.popupMenuIcon,
         ],
         popupMenuActionsShift: [
             props.style.popupMenuActionsShift,

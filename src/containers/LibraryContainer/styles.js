@@ -5,19 +5,25 @@ export default {
         flex: 1,
         backgroundColor: "#fff"
     },
+    statusBar: {
+        backgroundColor: "rgba(0,0,0,0.05)"
+    },
     toolbar: {
         container: {
             height: 56 + getStatusBarHeight(),
             paddingTop: getStatusBarHeight(),
-            backgroundColor: "#fff",
+            backgroundColor: "#f7f7f7"
         },
-        leftElement: {color: "#000"},
-        titleText: {color: "#000"},
-        rightElement: {color: "#000"},
+        leftElement: {color: "#8e8e8e"},
+        titleText: {color: "#444444", fontWeight: "300"},
+        rightElement: {color: "#8e8e8e", alignItems: "center"},
     },
     popupMenu: {
         popupMenuActionsShift: {
             left: 20
+        },
+        popupMenuIcon: {
+            color: "#8e8e8e"
         }
     },
     text: {
