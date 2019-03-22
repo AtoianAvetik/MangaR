@@ -22,7 +22,7 @@ export default {
     contentModal: {
         justifyContent: "center",
         alignItems: "center",
-        backgroundColor: "#DCDCDC"
+        backgroundColor: "#fff"
     },
     modalBasic: {
         flex: 1
