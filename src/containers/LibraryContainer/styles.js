@@ -19,5 +19,12 @@ export default {
         popupMenuActionsShift: {
             left: 20
         }
+    },
+    text: {
+        alignSelf: "center",
+        marginBottom: 7
+    },
+    mb: {
+        marginBottom: 15
     }
 };

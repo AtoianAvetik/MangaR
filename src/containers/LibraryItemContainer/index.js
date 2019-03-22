@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {ImageBackground, View} from "react-native";
+import {ImageBackground} from "react-native";
 import {Header, Left, Right, Button, Container, Content, Text} from "native-base";
 import {IconToggle} from "react-native-material-ui";
 import LinearGradient from "react-native-linear-gradient";

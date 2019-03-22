@@ -1,15 +1,14 @@
 import React, {Component} from "react";
-import {StatusBar} from "react-native";
+import {StatusBar, Image, TouchableNativeFeedback, View} from "react-native";
 import {
-    Container,
-    Content,
-    List,
-    ListItem,
-    Text
+    Container, Content, List, ListItem, Text, Grid, Col, Row,
+    CardItem, Body, Right, Card
 } from "native-base";
 import {Toolbar, IconToggle} from "react-native-material-ui";
-import styles from "./styles";
+import Ripple from 'react-native-material-ripple';
+
 import PopupMenu from "../../components/MorePopupMenu";
+import styles from "./styles";
 
 export default class LibraryContainer extends Component {
     constructor(props) {
@@ -35,6 +34,7 @@ export default class LibraryContainer extends Component {
                     rightElement={{
                         actions: [
                             <IconToggle iconSet="Feather"
+                                        key="filter"
                                         name="filter"
                                         color="#000"
                                         onPress={() => this.props.navigation.toggleFilterDrawer()}/>
@@ -50,47 +50,61 @@ export default class LibraryContainer extends Component {
                     style={styles.toolbar}
                 />
                 <Content bounces={false}>
-                    <List>
-                        <ListItem
-                            onPress={() => this.props.navigation.navigate("LibraryItem", {
-                                id: "item1",
-                                name: "Brent",
-                                backButton: true
-                            })}
-                            noBorder>
-                            <Text>Library Item Library Item PropTypes</Text>
-                            <PopupMenu
-                                actions={["item 1", "item 2"]}
-                                style={styles.popupMenu}
-                                onPress={(label) => console.log(label)}/>
-                        </ListItem>
-                        <ListItem
-                            onPress={() => this.props.navigation.navigate("LibraryItem", {
-                                id: "item1",
-                                name: "Brent",
-                                backButton: true
-                            })}
-                            noBorder>
-                            <Text>Library Item Library Item</Text>
-                            <PopupMenu
-                                actions={["item 1", "item 2"]}
-                                style={styles.popupMenu}
-                                onPress={(label) => console.log(label)}/>
-                        </ListItem>
-                        <ListItem
-                            onPress={() => this.props.navigation.navigate("LibraryItem", {
-                                id: "item1",
-                                name: "Brent",
-                                backButton: true
-                            })}
-                            noBorder>
-                            <Text>Library Item </Text>
-                            <PopupMenu
-                                actions={["item 1", "item 2"]}
-                                style={styles.popupMenu}
-                                onPress={(label) => console.log(label)}/>
-                        </ListItem>
-                    </List>
+                    <Grid>
+                        <Row>
+                            <Col>
+                                <Card style={styles.mb}>
+                                    <Ripple
+                                        delayLongPress={300}
+                                        onPress={() => console.log('TouchableOpacity onPress')}
+                                        onPressIn ={() => {
+                                            console.log('TouchableOpacity onPressIn');
+                                        }}
+                                        onPressOut ={() => {
+                                            console.log('TouchableOpacity onPressOut');
+                                            this.props.navigation.navigate("LibraryItem", {
+                                                id: "item1",
+                                                name: "Brent"
+                                            });
+                                        }}
+                                        onLongPress ={(e)=>{
+                                            console.log(' onLongPress');
+                                            console.log(Date.now());
+                                            console.log(e.type); //undefined
+                                        }}
+                                    >
+                                        <CardItem cardBody>
+                                            <Image
+                                                style={{
+                                                    resizeMode: "cover",
+                                                    width: null,
+                                                    height: 200,
+                                                    flex: 1
+                                                }}
+                                                source={{uri: "http://imgcover.mangachan.me/showfull_retina/uploads/posts/2015-11/thumbs/1446973523_nude-na-shisen_v1_ch1_001.jpg"}}
+                                            />
+                                        </CardItem>
+
+                                        <CardItem style={{ paddingVertical: 0 }}>
+                                            <Body>
+                                                <Text>Master</Text>
+                                            </Body>
+                                        </CardItem>
+                                    </Ripple>
+                                </Card>
+                            </Col>
+                            <Col>
+                            </Col>
+                        </Row>
+                        <Row>
+                            <Col>
+
+                            </Col>
+                            <Col>
+
+                            </Col>
+                        </Row>
+                    </Grid>
                 </Content>
             </Container>
         );
