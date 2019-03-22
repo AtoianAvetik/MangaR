@@ -23,11 +23,7 @@ class FilterModal extends Component {
                     onClosed={handleHide}
                 >
                     <View style={[styles.contentModal, styles.modalBasic]}>
-                        <Header
-                            androidStatusBarColor={"#b7b7b7"}
-                            translucent={true}
-                            transparent
-                        />
+                        <StatusBar animated={true} backgroundColor="rgba(0,0,0,0.7)"  barStyle="light-content"/>
                         <Button transparent style={styles.btnClose} onPress={handleHide}>
                             <Icon name="close" style={styles.txtMessage}/>
                         </Button>
